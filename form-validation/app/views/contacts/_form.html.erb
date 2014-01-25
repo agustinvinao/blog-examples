@@ -1,0 +1,29 @@
+<%= afv_javascript %>
+<%= form_for @contact, :html => {:name => afv_form_name(@contact.class)} do |f| %>
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact.errors.count, 'error') %> prohibited this contact from being saved:</h2>
+      <ul>
+      <% @contact.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, afv_field_validators(@contact.class, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email, afv_field_validators(@contact.class, :email) %>
+  </div>
+  <div class="field">
+    <%= f.label :message %><br>
+    <%= f.text_area :message, afv_field_validators(@contact.class, :message) %>
+  </div>
+  <div class="actions">
+    <%= f.submit nil, afv_form_submit(@contact.class) %>
+  </div>
+<% end %>
