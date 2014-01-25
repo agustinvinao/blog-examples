@@ -16,3 +16,6 @@ tmp
 .yardoc
 _yardoc
 doc/
+form-validation/.idea/
+/.idea/
+/form-validation/.idea/**
