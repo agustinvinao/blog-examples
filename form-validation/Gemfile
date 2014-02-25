@@ -42,6 +42,8 @@ end
 # gem 'capistrano', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
 gem 'angularjs-rails'
 gem 'ng-rails-csrf'
+
+gem 'angular_validations_rails', :path => '/Users/agustinvinao/Development/AV/angular_validations_rails', :branch => 'basic_functionality'

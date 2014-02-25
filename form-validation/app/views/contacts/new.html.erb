@@ -1,7 +1,5 @@
 <h1>New contact</h1>
 
-<%= content_tag :div, afv_ng_attributes(@contact.class) do %>
-  <%= render 'form' %>
-<% end %>
+<%= render 'form' %>
 
 <%= link_to 'Back', contacts_path %>

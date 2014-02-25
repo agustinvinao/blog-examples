@@ -1,5 +1,4 @@
-<%= afv_javascript %>
-<%= form_for @contact, :html => {:name => afv_form_name(@contact.class)} do |f| %>
+<%= angularjs_form_for @contact do |f| %>
   <% if @contact.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@contact.errors.count, 'error') %> prohibited this contact from being saved:</h2>
@@ -13,17 +12,38 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name, afv_field_validators(@contact.class, :name) %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :lastname %><br>
+    <%= f.text_field :lastname %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %>
   </div>
   <div class="field">
     <%= f.label :email %><br>
-    <%= f.text_field :email, afv_field_validators(@contact.class, :email) %>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :email_confirmation %><br>
+    <%= f.text_field :email_confirmation %>
   </div>
   <div class="field">
     <%= f.label :message %><br>
-    <%= f.text_area :message, afv_field_validators(@contact.class, :message) %>
+    <%= f.text_area :message %>
   </div>
+  <div class="field">
+    <%= f.label :tos %><br>
+    <%= f.check_box :tos %>
+  </div>
+  <div class="field">
+    <%= f.label :points %><br>
+    <%= f.text_field :points %>
+  </div>
+
   <div class="actions">
-    <%= f.submit nil, afv_form_submit(@contact.class) %>
+    <%= f.submit %>
   </div>
 <% end %>
